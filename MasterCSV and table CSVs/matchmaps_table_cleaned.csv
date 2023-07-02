@@ -1,0 +1,160 @@
+match_map_id,home_score,away_score,match_id,winning_team_id,losing_team_id,map_name
+19542,250,244,8661,10,13,Al Bagra Fortress
+19543,6,2,8661,10,13,Breenbergh Hotel
+19544,3,0,8661,10,13,Breenbergh Hotel
+19545,,,8661,,,Breenbergh Hotel
+19546,,,8661,,,El Asilo
+19567,250,173,8642,13,17,Mercado Las Almas
+19568,3,6,8642,17,13,Breenbergh Hotel
+19569,1,3,8642,17,13,El Asilo
+19570,185,250,8642,17,13,Breenbergh Hotel
+19571,,,8642,,,Embassy
+19582,133,250,8645,13,11,Mercado Las Almas
+19583,5,6,8645,13,11,Embassy
+19584,0,3,8645,13,11,Al Bagra Fortress
+19585,,,8645,,,Zarqwa Hydroelectric
+19586,,,8645,,,Breenbergh Hotel
+19602,250,218,8649,138,13,Al Bagra Fortress
+19603,6,5,8649,138,13,Al Bagra Fortress
+19604,2,3,8649,13,138,Al Bagra Fortress
+19605,221,250,8649,13,138,Zarqwa Hydroelectric
+19606,3,6,8649,13,138,Embassy
+20107,141,250,8783,15,13,Al Bagra Fortress
+20108,6,5,8783,13,15,Mercado Las Almas
+20109,0,3,8783,15,13,Himmelmatt Expo
+20110,250,90,8783,13,15,Zarqwa Hydroelectric
+20111,4,6,8783,15,13,Breenbergh Hotel
+20132,169,250,8788,13,69,Zarqwa Hydroelectric
+20133,2,6,8788,13,69,Breenbergh Hotel
+20134,3,0,8788,69,13,El Asilo
+20135,250,212,8788,69,13,Al Bagra Fortress
+20136,2,6,8788,13,69,El Asilo
+20167,180,250,8795,13,11,Embassy
+20168,4,6,8795,13,11,Breenbergh Hotel
+20169,0,3,8795,13,11,Himmelmatt Expo
+20170,,,8795,,,Mercado Las Almas
+20171,,,8795,,,Embassy
+20197,196,250,8801,16,13,Embassy
+20198,6,5,8801,13,16,El Asilo
+20199,3,1,8801,13,16,Breenbergh Hotel
+20200,250,153,8801,13,16,Zarqwa Hydroelectric
+20201,,,8801,,,Embassy
+20232,216,250,8808,138,13,Zarqwa Hydroelectric
+20233,6,1,8808,13,138,El Asilo
+20234,1,3,8808,138,13,Breenbergh Hotel
+20235,214,250,8808,138,13,Breenbergh Hotel
+20236,,,8808,,,Breenbergh Hotel
+19522,250,204,8657,69,15,Breenbergh Hotel
+19523,2,6,8657,15,69,Al Bagra Fortress
+19524,3,0,8657,69,15,Breenbergh Hotel
+19525,250,198,8657,69,15,Mercado Las Almas
+19526,,,8657,,,Breenbergh Hotel
+19562,250,216,8641,7,69,Breenbergh Hotel
+19563,5,6,8641,69,7,Breenbergh Hotel
+19564,3,2,8641,7,69,Al Bagra Fortress
+19565,169,250,8641,69,7,Zarqwa Hydroelectric
+19566,6,3,8641,7,69,El Asilo
+19607,250,189,8650,69,9,Breenbergh Hotel
+19608,5,6,8650,9,69,El Asilo
+19609,1,3,8650,9,69,El Asilo
+19610,194,250,8650,9,69,Embassy
+19611,,,8650,,,Embassy
+19622,250,204,8653,6,69,Breenbergh Hotel
+19623,5,6,8653,69,6,Al Bagra Fortress
+19624,2,3,8653,69,6,Breenbergh Hotel
+19625,116,250,8653,69,6,Embassy
+19626,,,8653,,,Breenbergh Hotel
+20117,250,244,8785,69,17,Al Bagra Fortress
+20118,3,6,8785,17,69,Embassy
+20119,2,3,8785,17,69,El Asilo
+20120,185,250,8785,17,69,Embassy
+20121,,,8785,,,Breenbergh Hotel
+20157,250,242,8793,9,69,Zarqwa Hydroelectric
+20158,4,6,8793,69,9,Embassy
+20159,3,0,8793,9,69,Himmelmatt Expo
+20160,250,128,8793,9,69,Al Bagra Fortress
+20161,,,8793,,,Mercado Las Almas
+20192,250,123,8800,12,69,Mercado Las Almas
+20193,2,6,8800,69,12,Breenbergh Hotel
+20194,3,1,8800,12,69,Himmelmatt Expo
+20195,250,217,8800,12,69,Al Bagra Fortress
+20196,,,8800,,,El Asilo
+20227,250,228,8807,69,10,Mercado Las Almas
+20228,6,4,8807,69,10,Mercado Las Almas
+20229,3,1,8807,69,10,Breenbergh Hotel
+20230,,,8807,,,Embassy
+20231,,,8807,,,El Asilo
+19517,203,250,8656,6,12,Zarqwa Hydroelectric
+19518,6,0,8656,12,6,Embassy
+19519,3,2,8656,12,6,El Asilo
+20465,1,0,8656,12,6,Al Bagra Fortress
+19557,202,250,8640,6,9,Mercado Las Almas
+19558,3,6,8640,6,9,Embassy
+19559,0,3,8640,6,9,Breenbergh Hotel
+19560,,,8640,,,Embassy
+19561,,,8640,,,Mercado Las Almas
+19597,250,223,8648,10,6,Al Bagra Fortress
+19598,2,6,8648,6,10,Mercado Las Almas
+19599,2,3,8648,6,10,Breenbergh Hotel
+19600,250,193,8648,10,6,Embassy
+19601,1,6,8648,6,10,Al Bagra Fortress
+20092,237,250,8810,15,6,Embassy
+20093,6,4,8810,6,15,Embassy
+20094,2,3,8810,15,6,El Asilo
+20095,250,175,8810,6,15,Breenbergh Hotel
+20096,6,5,8810,6,15,Breenbergh Hotel
+20127,250,172,8787,6,7,Al Bagra Fortress
+20128,6,5,8787,6,7,Embassy
+20129,3,0,8787,6,7,Himmelmatt Expo
+20130,,,8787,,,Breenbergh Hotel
+20131,,,8787,,,Mercado Las Almas
+20162,250,196,8794,6,16,Zarqwa Hydroelectric
+20163,6,4,8794,6,16,Breenbergh Hotel
+20164,3,1,8794,6,16,Breenbergh Hotel
+20165,,,8794,,,Al Bagra Fortress
+20166,,,8794,,,Embassy
+20177,250,221,8797,6,17,Mercado Las Almas
+20178,6,4,8797,6,17,Embassy
+20179,2,3,8797,17,6,Breenbergh Hotel
+20180,250,223,8797,6,17,Breenbergh Hotel
+20181,,,8797,,,Mercado Las Almas
+20207,250,222,8803,6,9,Zarqwa Hydroelectric
+20208,6,4,8803,6,9,Al Bagra Fortress
+20209,3,2,8803,6,9,Himmelmatt Expo
+20210,,,8803,,,Al Bagra Fortress
+20211,,,8803,,,Mercado Las Almas
+19527,250,126,8658,16,11,Al Bagra Fortress
+19528,5,6,8658,11,16,Al Bagra Fortress
+19529,2,3,8658,11,16,Breenbergh Hotel
+19530,250,91,8658,16,11,Breenbergh Hotel
+19531,2,6,8658,11,16,Breenbergh Hotel
+19537,250,233,8660,138,16,Breenbergh Hotel
+19538,6,4,8660,138,16,Al Bagra Fortress
+19539,1,3,8660,16,138,Breenbergh Hotel
+19540,250,175,8660,138,16,Embassy
+19541,,,8660,,,El Asilo
+19572,68,250,8643,16,10,Breenbergh Hotel
+19573,6,4,8643,10,16,Mercado Las Almas
+19574,2,3,8643,16,10,Breenbergh Hotel
+19575,235,250,8643,16,10,Mercado Las Almas
+19576,,,8643,,,El Asilo
+19617,239,250,8652,16,17,Embassy
+19618,6,3,8652,17,16,Al Bagra Fortress
+19619,3,2,8652,17,16,Breenbergh Hotel
+19620,250,232,8652,17,16,Breenbergh Hotel
+19621,,,8652,,,Mercado Las Almas
+20097,250,168,8811,17,16,Breenbergh Hotel
+20098,6,3,8811,17,16,Embassy
+20099,3,0,8811,17,16,Breenbergh Hotel
+20100,,,8811,,,Embassy
+20101,,,8811,,,Breenbergh Hotel
+20182,219,250,8798,16,138,Zarqwa Hydroelectric
+20183,5,6,8798,16,138,El Asilo
+20184,3,1,8798,138,16,Breenbergh Hotel
+20185,227,250,8798,16,138,Al Bagra Fortress
+20186,,,8798,,,Embassy
+20202,205,250,8802,15,16,Embassy
+20203,5,6,8802,15,16,Mercado Las Almas
+20204,3,1,8802,16,15,El Asilo
+20205,206,250,8802,15,16,Breenbergh Hotel
+20206,,,8802,,,El Asilo
