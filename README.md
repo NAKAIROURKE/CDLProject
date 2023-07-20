@@ -16,3 +16,13 @@ I removed all unwanted columns and renamed all included columns with clear, refi
 This MASTERCSV was used to create my relational DB schema. The schema needed to be as normalized as possible so I created six tables with the roughly fifty columns in the MASTERCSV. The tables are named team, player, map, match, matchmaps, and matchstats. The match table is a transaction table as it has a UNIX timestamp column to mark when the game was played. The MASTERSCV was then trimmed down to match the columns needed for each table and then imported using pgAdmin Import/Export Data. All columns that could not be imported were updated using SQL queries. All table creation and data insertion are contained in the "CDL Table Creation.sql". 
 
 Since I only have 32 matches from the season, not all teams and players are fully represented and so analysis might skew if there isnt an equal amount available. I first determined the average match count and matchstat count for teams and players respectively. Then, found which teams/players had more match rows and matchstats rows than the average. These are the teams/players we will analyze first. These queries can be found in the "Table Verification Queries.sql". 
+
+
+--------------------------------- UPDATE 7/23----------------------------------
+
+Replaced JSON Transformation Process
+    -JSON still manually downloaded but removed online converter and KNIME loading and KNIME transformation process. 
+        Once json file was downloaded, it was renamed to with game meta data and stored in single file folder. This folder was then accessed by Excel Power query for transformation. I created a query for each table I wanted "guest_stats", "host_stats" and "match_stats". I imported the single JSON file
+        into Power Query and expanded each record and file column until my preferred tablular format was achieved. I then created a custom M function around this process for the individual JSON file. ( https://stackoverflow.com/questions/61814470/is-there-a-way-to-import-a-bunch-of-json-files-into-excel ) I then 
+        created an automation query for each table ex: "guest_stats_automate". The automated query had the json file folder as its import location. Then, the custom function was called to transform the json to a table. I removed the unwanted columns and removed errors for the automate query. Each table can now be 
+        appeneded with new json files if they are added to the folder. 
