@@ -1,0 +1,105 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/x-ms-odc; charset=utf-8">
+<meta name=ProgId content=ODC.Database>
+<meta name=SourceType content=OLEDB>
+<title>Query - match_results_function_prep_query</title>
+<xml id=docprops><o:DocumentProperties
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns="http://www.w3.org/TR/REC-html40">
+  <o:Description>Connection to the 'match_results_function_prep_query' query in the workbook.</o:Description>
+  <o:Name>Query - match_results_function_prep_query</o:Name>
+ </o:DocumentProperties>
+</xml><xml id=msodc><odc:OfficeDataConnection
+  xmlns:odc="urn:schemas-microsoft-com:office:odc"
+  xmlns="http://www.w3.org/TR/REC-html40">
+  <odc:PowerQueryConnection odc:Type="OLEDB">
+   <odc:ConnectionString>Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=match_results_function_prep_query;Extended Properties=&quot;&quot;</odc:ConnectionString>
+   <odc:CommandType>SQL</odc:CommandType>
+   <odc:CommandText>SELECT * FROM [match_results_function_prep_query]</odc:CommandText>
+  </odc:PowerQueryConnection>
+  <odc:PowerQueryMashupData>&lt;Mashup xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.microsoft.com/DataMashup&quot;&gt;&lt;Client&gt;EXCEL&lt;/Client&gt;&lt;Version&gt;2.118.202.0&lt;/Version&gt;&lt;MinVersion&gt;2.21.0.0&lt;/MinVersion&gt;&lt;Culture&gt;en-US&lt;/Culture&gt;&lt;SafeCombine&gt;true&lt;/SafeCombine&gt;&lt;Items&gt;&lt;Query Name=&quot;match_results_function_prep_query&quot;&gt;&lt;Formula&gt;&lt;![CDATA[let&#13;&#10;    Source = Json.Document(File.Contents(&quot;C:\Users\rourk\Desktop\CDL Project\JSON example file.txt&quot;)),&#13;&#10;    #&quot;Converted to Table&quot; = Record.ToTable(Source),&#13;&#10;    #&quot;Transposed Table&quot; = Table.Transpose(#&quot;Converted to Table&quot;),&#13;&#10;    #&quot;Promoted Headers&quot; = Table.PromoteHeaders(#&quot;Transposed Table&quot;, [PromoteAllScalars=true]),&#13;&#10;    #&quot;Changed Type&quot; = Table.TransformColumnTypes(#&quot;Promoted Headers&quot;,{{&quot;matchData&quot;, type any}, {&quot;Version&quot;, Int64.Type}, {&quot;locale&quot;, type text}, {&quot;uid&quot;, type text}, {&quot;ACL&quot;, type any}, {&quot;InProgress&quot;, type logical}, {&quot;contentOverlay&quot;, type any}, {&quot;createdAt&quot;, type datetime}, {&quot;createdBy&quot;, type text}, {&quot;disableSentinelIncentiveTracking&quot;, type logical}, {&quot;enableMatchDetailRestriction&quot;, type logical}, {&quot;matchDetailRestriction&quot;, type any}, {&quot;meta&quot;, type any}, {&quot;omittedMatches&quot;, type any}, {&quot;tags&quot;, type any}, {&quot;title&quot;, type text}, {&quot;updatedAt&quot;, type datetime}, {&quot;updatedBy&quot;, type text}, {&quot;videoOverlayOverride&quot;, type logical}, {&quot;viewershipIncentiveLogin&quot;, type any}, {&quot;publishDetails&quot;, type any}, {&quot;displayVideoOverlay&quot;, type logical}}),&#13;&#10;    #&quot;Expanded matchData&quot; = Table.ExpandRecordColumn(#&quot;Changed Type&quot;, &quot;matchData&quot;, {&quot;matchExtended&quot;, &quot;matchGamesExtended&quot;, &quot;matchStats&quot;}, {&quot;matchData.matchExtended&quot;, &quot;matchData.matchGamesExtended&quot;, &quot;matchData.matchStats&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchStats&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData&quot;, &quot;matchData.matchStats&quot;, {&quot;matches&quot;}, {&quot;matchData.matchStats.matches&quot;}),&#13;&#10;    #&quot;Removed Columns&quot; = Table.RemoveColumns(#&quot;Expanded matchData.matchStats&quot;,{&quot;omittedMatches&quot;, &quot;matchDetailRestriction&quot;, &quot;enableMatchDetailRestriction&quot;, &quot;disableSentinelIncentiveTracking&quot;, &quot;createdAt&quot;, &quot;contentOverlay&quot;, &quot;InProgress&quot;, &quot;uid&quot;, &quot;locale&quot;, &quot;ACL&quot;, &quot;Version&quot;, &quot;createdBy&quot;, &quot;publishDetails&quot;, &quot;displayVideoOverlay&quot;, &quot;viewershipIncentiveLogin&quot;, &quot;videoOverlayOverride&quot;, &quot;updatedBy&quot;, &quot;updatedAt&quot;, &quot;meta&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchStats.matches&quot; = Table.ExpandRecordColumn(#&quot;Removed Columns&quot;, &quot;matchData.matchStats.matches&quot;, {&quot;hostTeam&quot;, &quot;guestTeam&quot;}, {&quot;matchData.matchStats.matches.hostTeam&quot;, &quot;matchData.matchStats.matches.guestTeam&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchExtended&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchStats.matches&quot;, &quot;matchData.matchExtended&quot;, {&quot;homeTeamCard&quot;, &quot;awayTeamCard&quot;, &quot;competition&quot;, &quot;match&quot;, &quot;result&quot;}, {&quot;matchData.matchExtended.homeTeamCard&quot;, &quot;matchData.matchExtended.awayTeamCard&quot;, &quot;matchData.matchExtended.competition&quot;, &quot;matchData.matchExtended.match&quot;, &quot;matchData.matchExtended.result&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchExtended.homeTeamCard&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchExtended&quot;, &quot;matchData.matchExtended.homeTeamCard&quot;, {&quot;id&quot;, &quot;name&quot;, &quot;abbreviation&quot;}, {&quot;matchData.matchExtended.homeTeamCard.id&quot;, &quot;matchData.matchExtended.homeTeamCard.name&quot;, &quot;matchData.matchExtended.homeTeamCard.abbreviation&quot;}),&#13;&#10;    #&quot;Removed Columns1&quot; = Table.RemoveColumns(#&quot;Expanded matchData.matchExtended.homeTeamCard&quot;,{&quot;matchData.matchStats.matches.guestTeam&quot;}),&#13;&#10;    #&quot;Renamed Columns&quot; = Table.RenameColumns(#&quot;Removed Columns1&quot;,{{&quot;matchData.matchExtended.homeTeamCard.name&quot;, &quot;home_team&quot;}}),&#13;&#10;    #&quot;Removed Columns2&quot; = Table.RemoveColumns(#&quot;Renamed Columns&quot;,{&quot;tags&quot;, &quot;title&quot;, &quot;matchData.matchStats.matches.hostTeam&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchGamesExtended&quot; = Table.ExpandListColumn(#&quot;Removed Columns2&quot;, &quot;matchData.matchGamesExtended&quot;),&#13;&#10;    #&quot;Expanded matchData.matchGamesExtended1&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchGamesExtended&quot;, &quot;matchData.matchGamesExtended&quot;, {&quot;matchGame&quot;, &quot;matchGameResult&quot;}, {&quot;matchData.matchGamesExtended.matchGame&quot;, &quot;matchData.matchGamesExtended.matchGameResult&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchExtended.awayTeamCard&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchGamesExtended1&quot;, &quot;matchData.matchExtended.awayTeamCard&quot;, {&quot;id&quot;, &quot;name&quot;, &quot;abbreviation&quot;}, {&quot;matchData.matchExtended.awayTeamCard.id&quot;, &quot;matchData.matchExtended.awayTeamCard.name&quot;, &quot;matchData.matchExtended.awayTeamCard.abbreviation&quot;}),&#13;&#10;    #&quot;Removed Columns3&quot; = Table.RemoveColumns(#&quot;Expanded matchData.matchExtended.awayTeamCard&quot;,{&quot;matchData.matchExtended.competition&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchExtended.match&quot; = Table.ExpandRecordColumn(#&quot;Removed Columns3&quot;, &quot;matchData.matchExtended.match&quot;, {&quot;id&quot;, &quot;playTime&quot;}, {&quot;matchData.matchExtended.match.id&quot;, &quot;matchData.matchExtended.match.playTime&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchExtended.result&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchExtended.match&quot;, &quot;matchData.matchExtended.result&quot;, {&quot;homeTeamGamesWon&quot;, &quot;awayTeamGamesWon&quot;, &quot;winnerTeamId&quot;, &quot;loserTeamId&quot;}, {&quot;matchData.matchExtended.result.homeTeamGamesWon&quot;, &quot;matchData.matchExtended.result.awayTeamGamesWon&quot;, &quot;matchData.matchExtended.result.winnerTeamId&quot;, &quot;matchData.matchExtended.result.loserTeamId&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchGamesExtended.matchGame&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchExtended.result&quot;, &quot;matchData.matchGamesExtended.matchGame&quot;, {&quot;id&quot;, &quot;number&quot;, &quot;map&quot;, &quot;mode&quot;}, {&quot;matchData.matchGamesExtended.matchGame.id&quot;, &quot;matchData.matchGamesExtended.matchGame.number&quot;, &quot;matchData.matchGamesExtended.matchGame.map&quot;, &quot;matchData.matchGamesExtended.matchGame.mode&quot;}),&#13;&#10;    #&quot;Expanded matchData.matchGamesExtended.matchGameResult&quot; = Table.ExpandRecordColumn(#&quot;Expanded matchData.matchGamesExtended.matchGame&quot;, &quot;matchData.matchGamesExtended.matchGameResult&quot;, {&quot;hostGameScore&quot;, &quot;guestGameScore&quot;, &quot;winnerTeamId&quot;, &quot;loserTeamId&quot;}, {&quot;matchData.matchGamesExtended.matchGameResult.hostGameScore&quot;, &quot;matchData.matchGamesExtended.matchGameResult.guestGameScore&quot;, &quot;matchData.matchGamesExtended.matchGameResult.winnerTeamId&quot;, &quot;matchData.matchGamesExtended.matchGameResult.loserTeamId&quot;}),&#13;&#10;    #&quot;Changed Type1&quot; = Table.TransformColumnTypes(#&quot;Expanded matchData.matchGamesExtended.matchGameResult&quot;,{{&quot;matchData.matchExtended.homeTeamCard.id&quot;, Int64.Type}, {&quot;home_team&quot;, type text}, {&quot;matchData.matchExtended.homeTeamCard.abbreviation&quot;, type text}, {&quot;matchData.matchExtended.awayTeamCard.id&quot;, Int64.Type}, {&quot;matchData.matchExtended.awayTeamCard.name&quot;, type text}, {&quot;matchData.matchExtended.awayTeamCard.abbreviation&quot;, type text}, {&quot;matchData.matchExtended.match.id&quot;, Int64.Type}, {&quot;matchData.matchExtended.match.playTime&quot;, Int64.Type}, {&quot;matchData.matchExtended.result.homeTeamGamesWon&quot;, Int64.Type}, {&quot;matchData.matchExtended.result.awayTeamGamesWon&quot;, Int64.Type}, {&quot;matchData.matchExtended.result.winnerTeamId&quot;, Int64.Type}, {&quot;matchData.matchExtended.result.loserTeamId&quot;, Int64.Type}, {&quot;matchData.matchGamesExtended.matchGame.id&quot;, Int64.Type}, {&quot;matchData.matchGamesExtended.matchGame.number&quot;, Int64.Type}, {&quot;matchData.matchGamesExtended.matchGame.map&quot;, type text}, {&quot;matchData.matchGamesExtended.matchGame.mode&quot;, type text}, {&quot;matchData.matchGamesExtended.matchGameResult.hostGameScore&quot;, Int64.Type}, {&quot;matchData.matchGamesExtended.matchGameResult.guestGameScore&quot;, Int64.Type}, {&quot;matchData.matchGamesExtended.matchGameResult.winnerTeamId&quot;, Int64.Type}, {&quot;matchData.matchGamesExtended.matchGameResult.loserTeamId&quot;, Int64.Type}}),&#13;&#10;    #&quot;Added Index&quot; = Table.AddIndexColumn(#&quot;Changed Type1&quot;, &quot;Index&quot;, 1, 1, Int64.Type),&#13;&#10;    #&quot;Renamed Columns1&quot; = Table.RenameColumns(#&quot;Added Index&quot;,{{&quot;matchData.matchExtended.homeTeamCard.id&quot;, &quot;host_team_id&quot;}, {&quot;home_team&quot;, &quot;host_team_name&quot;}, {&quot;matchData.matchExtended.homeTeamCard.abbreviation&quot;, &quot;host_team_abv&quot;}, {&quot;matchData.matchExtended.awayTeamCard.id&quot;, &quot;guest_team_id&quot;}, {&quot;matchData.matchExtended.awayTeamCard.name&quot;, &quot;guest_team_name&quot;}, {&quot;matchData.matchExtended.awayTeamCard.abbreviation&quot;, &quot;guest_team_abv&quot;}, {&quot;matchData.matchExtended.match.id&quot;, &quot;match_id&quot;}, {&quot;matchData.matchExtended.match.playTime&quot;, &quot;play_time&quot;}, {&quot;matchData.matchExtended.result.homeTeamGamesWon&quot;, &quot;home_team_wins&quot;}, {&quot;matchData.matchExtended.result.awayTeamGamesWon&quot;, &quot;away_team_wins&quot;}, {&quot;matchData.matchExtended.result.winnerTeamId&quot;, &quot;winning_team_id&quot;}, {&quot;matchData.matchExtended.result.loserTeamId&quot;, &quot;loser_team_id&quot;}, {&quot;matchData.matchGamesExtended.matchGame.number&quot;, &quot;map_number&quot;}, {&quot;matchData.matchGamesExtended.matchGame.map&quot;, &quot;map_name&quot;}, {&quot;matchData.matchGamesExtended.matchGame.mode&quot;, &quot;map_mode&quot;}, {&quot;matchData.matchGamesExtended.matchGameResult.hostGameScore&quot;, &quot;host_score&quot;}, {&quot;matchData.matchGamesExtended.matchGameResult.guestGameScore&quot;, &quot;guest_score&quot;}, {&quot;matchData.matchGamesExtended.matchGameResult.winnerTeamId&quot;, &quot;map_winning_team_id&quot;}, {&quot;matchData.matchGamesExtended.matchGameResult.loserTeamId&quot;, &quot;map_losing_team_id&quot;}})&#13;&#10;in&#13;&#10;    #&quot;Renamed Columns1&quot;]]&gt;&lt;/Formula&gt;&lt;IsParameterQuery xsi:nil=&quot;true&quot; /&gt;&lt;IsDirectQuery xsi:nil=&quot;true&quot; /&gt;&lt;/Query&gt;&lt;/Items&gt;&lt;/Mashup&gt;</odc:PowerQueryMashupData>
+ </odc:OfficeDataConnection>
+</xml>
+<style>
+<!--
+    .ODCDataSource
+    {
+    behavior: url(dataconn.htc);
+    }
+-->
+</style>
+ 
+</head>
+
+<body onload='init()' scroll=no leftmargin=0 topmargin=0 rightmargin=0 style='border: 0px'>
+<table style='border: solid 1px threedface; height: 100%; width: 100%' cellpadding=0 cellspacing=0 width='100%'> 
+  <tr> 
+    <td id=tdName style='font-family:arial; font-size:medium; padding: 3px; background-color: threedface'> 
+      &nbsp; 
+    </td> 
+     <td id=tdTableDropdown style='padding: 3px; background-color: threedface; vertical-align: top; padding-bottom: 3px'>
+
+      &nbsp; 
+    </td> 
+  </tr> 
+  <tr> 
+    <td id=tdDesc colspan='2' style='border-bottom: 1px threedshadow solid; font-family: Arial; font-size: 1pt; padding: 2px; background-color: threedface'>
+
+      &nbsp; 
+    </td> 
+  </tr> 
+  <tr> 
+    <td colspan='2' style='height: 100%; padding-bottom: 4px; border-top: 1px threedhighlight solid;'> 
+      <div id='pt' style='height: 100%' class='ODCDataSource'></div> 
+    </td> 
+  </tr> 
+</table> 
+
+  
+<script language='javascript'> 
+
+function init() { 
+  var sName, sDescription; 
+  var i, j; 
+  
+  try { 
+    sName = unescape(location.href) 
+  
+    i = sName.lastIndexOf(".") 
+    if (i>=0) { sName = sName.substring(1, i); } 
+  
+    i = sName.lastIndexOf("/") 
+    if (i>=0) { sName = sName.substring(i+1, sName.length); } 
+
+    document.title = sName; 
+    document.getElementById("tdName").innerText = sName; 
+
+    sDescription = document.getElementById("docprops").innerHTML; 
+  
+    i = sDescription.indexOf("escription>") 
+    if (i>=0) { j = sDescription.indexOf("escription>", i + 11); } 
+
+    if (i>=0 && j >= 0) { 
+      j = sDescription.lastIndexOf("</", j); 
+
+      if (j>=0) { 
+          sDescription = sDescription.substring(i+11, j); 
+        if (sDescription != "") { 
+            document.getElementById("tdDesc").style.fontSize="x-small"; 
+          document.getElementById("tdDesc").innerHTML = sDescription; 
+          } 
+        } 
+      } 
+    } 
+  catch(e) { 
+
+    } 
+  } 
+</script> 
+
+</body> 
+ 
+</html>
